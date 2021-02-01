@@ -96,10 +96,14 @@
         if(realPin === typedRealPin){
             const correct = document.getElementById('correct');
             correct.style.display = 'block';
+            const inCorrect = document.getElementById('incorrect');
+            inCorrect.style.display = 'none';    
         }
         else{
-            const correct = document.getElementById('incorrect');
-            correct.style.display = 'block';
+            const correct = document.getElementById('correct');
+            correct.style.display = 'none';
+            const inCorrect = document.getElementById('incorrect');
+            inCorrect.style.display = 'block';
             
         }
         }
