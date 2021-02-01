@@ -75,12 +75,12 @@
         //handle caltculator button
         const buttonContainer = document.getElementById('digits-container');
         buttonContainer.addEventListener('click', function(event){
-            const digit = event.target.innerText;
+             const digit = event.target.innerText;
             if (isNaN(digit)){
                 
                  if(digit === 'C'){
                     const typedInput = document.getElementById('typed-pin');
-                typedInput.value = '';
+                    typedInput.value = '';
 
                  }
             }
@@ -88,26 +88,26 @@
                 const typedInput = document.getElementById('typed-pin');
                 typedInput.value = typedInput.value + digit;
             }
-
         })
         function verifyPin (){
             const realPin = document.getElementById('pin').value;
-        const typedRealPin = document.getElementById('typed-pin').value;
-        if(realPin === typedRealPin){
-            const correct = document.getElementById('correct');
-            correct.style.display = 'block';
-            const inCorrect = document.getElementById('incorrect');
-            inCorrect.style.display = 'none';    
+            const typedRealPin = document.getElementById('typed-pin').value;
+            if(realPin === typedRealPin){
+            displayMatcherStatus ('block', 'none');
         }
+        
         else{
-            const correct = document.getElementById('correct');
-            correct.style.display = 'none';
-            const inCorrect = document.getElementById('incorrect');
-            inCorrect.style.display = 'block';
-            
+            displayMatcherStatus ('none', 'block');
         }
         }
         
+        function displayMatcherStatus (correctStatus, inCorrectStatus){
+            const correct = document.getElementById('correct');
+            correct.style.display = correctStatus;
+            const inCorrect = document.getElementById('incorrect');
+            inCorrect.style.display = inCorrectStatus;  
+        }
+
 
         
     </script>
